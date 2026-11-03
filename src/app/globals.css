@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --igc-lime: #c8ff3d;
+  --igc-electric: #2f6bff;
+}
+
+* {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050506;
+  color: #f5f6f8;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+::selection {
+  background: var(--igc-lime);
+  color: #050506;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0b0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #262c38;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4252;
+}
+
+@layer components {
+  .igc-container {
+    @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12;
+  }
+
+  .igc-section {
+    @apply relative py-20 md:py-28;
+  }
+
+  .igc-eyebrow {
+    @apply text-[11px] font-bold uppercase tracking-[0.32em] text-lime;
+  }
+
+  .igc-display {
+    @apply font-display font-black uppercase leading-[0.92] tracking-[-0.045em];
+  }
+
+  .igc-card {
+    @apply rounded-2xl border border-white/10 bg-ink-850/80 shadow-card backdrop-blur-sm;
+  }
+
+  .igc-input {
+    @apply w-full rounded-xl border border-white/10 bg-ink-900 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-lime/60 focus:ring-2 focus:ring-lime/15;
+  }
+
+  .igc-label {
+    @apply mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-white/55;
+  }
+
+  .igc-table {
+    @apply w-full border-collapse text-left text-sm;
+  }
+  .igc-table th {
+    @apply border-b border-white/10 px-4 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-white/45;
+  }
+  .igc-table td {
+    @apply border-b border-white/5 px-4 py-3 text-white/75;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(100deg, #ffffff 10%, #c8ff3d 55%, #2f6bff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-noise {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 4px 4px;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+}
