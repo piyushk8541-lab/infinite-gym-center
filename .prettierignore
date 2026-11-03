@@ -1,0 +1,12 @@
+node_modules
+.next
+coverage
+dist
+build
+public/images
+image-search
+package-lock.json
+*.sql
+.env.example
+LICENSE
+next-env.d.ts
